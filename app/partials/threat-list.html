@@ -1,0 +1,32 @@
+ <table id="t01">
+  <tr>
+    <th>Category</th>
+    <th>Count</th>
+  </tr>
+  <tr ng-repeat="category in categoryArray">
+    <td>{{category.name}}</td>
+    <td>{{category.count}}</td>
+  </tr>
+</table> 
+
+
+<div ng-repeat="threat in threats">
+  <span>{{threat.ip}}</span>
+  <p>{{threat.owner}}</p>
+  <p>{{threat.function}}</p>
+  <div ng-repeat="virus in threat.virus">
+  	<p>{{virus}}</p>
+  </div>
+</div>
+
+<div>
+	<p>Category Counts</p>
+	<p>Trojans = {{categoryCount['Trojans']}}</p>
+	<p>Bots = {{categoryCount['Bots']}}</p>
+	<p>Spam = {{categoryCount['Spam']}}</p>
+</div>
+
+<div>
+	<p>Sorted Category Counts</p>
+	<p ng-repeat="category in categoryArray">{{category.name}} = {{category.count}}</p>
+</div>
