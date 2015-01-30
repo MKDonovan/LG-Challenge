@@ -6,6 +6,8 @@ var threatControllers = angular.module('threatControllers', []);
 threatControllers.controller('ThreatListCtrl', ['$scope',  'Threat', 'UtilityService', 
 	function($scope, Threat, UtilityService) {
 
+		var functionArray = ["web server", "mail server", "ftp server"]		
+
 		$scope.threats = Threat.query(function(threats) {
 			$scope.processData(threats);	
 		});	
@@ -40,8 +42,6 @@ threatControllers.controller('ThreatListCtrl', ['$scope',  'Threat', 'UtilitySer
 		};
 
 		$scope.getRandomData = function(virus) {
-			var virusArray = ["APT1", "Botnet", "Spam", "StealCreds"]
-			var functionArray = ["web server", "mail server", "ftp server"]
 			var n = 2;
 			while (n--)	{
 				$scope.threats.push({
