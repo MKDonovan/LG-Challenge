@@ -1,4 +1,4 @@
- <table id="t01">
+ <table class="lg-table">
   <tr>
     <th>Category</th>
     <th>Count</th>
@@ -9,24 +9,15 @@
   </tr>
 </table> 
 
-
-<div ng-repeat="threat in threats">
-  <span>{{threat.ip}}</span>
-  <p>{{threat.owner}}</p>
-  <p>{{threat.function}}</p>
-  <div ng-repeat="virus in threat.virus">
-  	<p>{{virus}}</p>
-  </div>
-</div>
-
-<div>
-	<p>Category Counts</p>
-	<p>Trojans = {{categoryCount['Trojans']}}</p>
-	<p>Bots = {{categoryCount['Bots']}}</p>
-	<p>Spam = {{categoryCount['Spam']}}</p>
-</div>
-
-<div>
-	<p>Sorted Category Counts</p>
-	<p ng-repeat="category in categoryArray">{{category.name}} = {{category.count}}</p>
-</div>
+ <table class="lg-table">
+  <tr>
+    <th>IP</th>
+    <th>Virus</th>
+    <th>Function</th>
+  </tr>
+  <tr ng-repeat="threat in threats">
+    <td>{{threat.ip}}</td>
+    <td>{{threat.virus.join(', ')}}</td>    
+    <td>{{threat.function}}</td>
+  </tr>
+</table> 

@@ -29,6 +29,10 @@
   padding: 0;
 }
 
+table.lg-table {
+    margin: 20px auto;
+}
+
 table, th, td {
     border: 1px solid black;
     border-collapse: collapse;
@@ -41,13 +45,13 @@ th {
     text-align: left;
 }
 
-table#t01 tr:nth-child(even) {
+table.lg-table tr:nth-child(even) {
     background-color: #eee;
 }
-table#t01 tr:nth-child(odd) {
+table.lg-table tr:nth-child(odd) {
     background-color: #fff;
 }
-table#t01 th {
+table.lg-table th {
     color: white;
     background-color: black;
 } 
